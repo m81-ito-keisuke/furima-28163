@@ -31,7 +31,7 @@ has_one :customer
 |category_id|integer|null: false|
 |status_id|integer|null: false|
 |delivery_change_id|integer|null: false|
-|shipping_area_id|integer|null: false|
+|prefecture_id|integer|null: false|
 |ship_days_id|integer|null: false|
 |price|integer|null: false|
 
