@@ -8,7 +8,6 @@
 has_many :items
 has_many :customers
 
-|Column|Type|Options|
 |nickname|string|null: false, unique: true|
 |email|string|null: false, unique: true|
 |encrypted_password|string|null: false|
@@ -22,7 +21,6 @@ has_many :customers
 belongs_to :user
 has_one :customer
 
-|Column|Type|Options|
 |user_id|integer|null: false, foreign_key: true|
 |name|string|null: false|
 |detail|text|null: false|
@@ -49,8 +47,7 @@ belongs_to :customer
 |house_number|string|null: false|
 |building_name|string|
 |phone_number|string|null: false|
-|item_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+|customer_id|integer|null: false, foreign_key: true|
 
 ### Association
 （ここに追記していく）
