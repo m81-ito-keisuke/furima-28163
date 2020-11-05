@@ -8,6 +8,8 @@
 has_many :items
 has_many :customers
 
+|Column|Type|Options|
+|------|----|-------|
 |nickname|string|null: false, unique: true|
 |email|string|null: false, unique: true|
 |encrypted_password|string|null: false|
@@ -21,6 +23,8 @@ has_many :customers
 belongs_to :user
 has_one :customer
 
+|Column|Type|Options|
+|------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |name|string|null: false|
 |detail|text|null: false|
@@ -32,15 +36,20 @@ has_one :customer
 |price|integer|null: false|
 
 ## customers table
-customer belongs_to :item
-customer has_one :address
+belongs_to :user
+belongs_to :item
+has_one :address
 
+|Column|Type|Options|
+|------|----|-------|
 |item_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 
 ## addresses table
 belongs_to :customer
 
+|Column|Type|Options|
+|------|----|-------|
 |postal_code|string|null: false|
 |prefecture_id|integer|null: false|
 |city|string|null: false|
