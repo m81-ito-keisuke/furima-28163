@@ -20,4 +20,12 @@ class Item < ApplicationRecord
   validates :delivery_change_id
   validates :ship_days_id
   end
+
+  with_options presence: true do
+    validates :image
+    validates :user_id
+    validates :name
+    validates :detail
+    validates :price, format: {with: /\A[0-9]+\z/}, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
+  end
 end
