@@ -3,18 +3,18 @@ class Item < ApplicationRecord
   has_one_attached :image
 
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :category
-  belongs_to :status
-  belongs_to :prefecture
-  belongs_to :delivery_change
-  belongs_to :ship_day
+    belongs_to :category
+    belongs_to :status
+    belongs_to :prefecture
+    belongs_to :delivery_change
+    belongs_to :ship_day
 
   with_options presence: true, numericality: { other_than: 1 } do
-  validates :category_id
-  validates :status_id
-  validates :prefecture_id
-  validates :delivery_change_id
-  validates :ship_days_id
+    validates :category_id
+    validates :status_id
+    validates :prefecture_id
+    validates :delivery_change_id
+    validates :ship_days_id
   end
 
   with_options presence: true do
