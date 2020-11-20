@@ -23,7 +23,6 @@ class Item < ApplicationRecord
 
   with_options presence: true do
     validates :image
-    validates :user_id
     validates :name
     validates :detail
     validates :price, format: {with: /\A[0-9]+\z/}, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
