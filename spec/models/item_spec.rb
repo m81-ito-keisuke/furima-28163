@@ -29,27 +29,27 @@ describe Item do
         expect(@item.errors.full_messages).to include("Detail can't be blank")
       end
       it "カテゴリーの情報がなければ出品できない" do
-        @item.category_id = "1"
+        @item.category_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Category must be other than 1")
       end
       it "商品の状態についてのの情報がなければ出品できない" do
-        @item.status_id = "1"
+        @item.status_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Status must be other than 1")
       end
       it "配送料の負担についての情報がなければ出品できない" do
-        @item.delivery_change_id = "1"
+        @item.delivery_change_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Delivery change must be other than 1")
       end
       it "発送元の地域についての情報がなければ出品できない" do
-        @item.prefecture_id = "1"
+        @item.prefecture_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Prefecture must be other than 1")
       end
       it "発送までの日数についての情報がなければ出品できない" do
-        @item.ship_days_id = "1"
+        @item.ship_days_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Ship days must be other than 1")
       end
@@ -59,12 +59,12 @@ describe Item do
         expect(@item.errors.full_messages).to include("Price can't be blank")
       end
       it "価格の範囲が、¥300未満では出品できない" do
-        @item.price = "299"
+        @item.price = 299
         @item.valid?
         expect(@item.errors.full_messages).to include("Price must be greater than or equal to 300")
       end
       it "価格の範囲が、¥9,999,999より高ければ出品できない" do
-        @item.price = "999999999"
+        @item.price = "10000000"
         @item.valid?
         expect(@item.errors.full_messages).to include("Price must be less than or equal to 9999999")
 
