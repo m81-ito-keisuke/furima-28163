@@ -145,7 +145,7 @@
           </h3>
 
           <div class='item-price'>
-            <span><%= item.price %>円<br><%= "配送料負担" %></span>
+            <span><%= item.price %>円<br><%= item.delivery_change_id %></span>
           <% end %>
             <div class='star-btn'>
               <%= image_tag "star.png", class:"star-icon" %>
@@ -157,7 +157,7 @@
       </li>
 
       <%# 商品がない場合のダミー %>
-      <% if @item.present? %>
+      <% if @items.blank? %>
       <li class='list'>
         <%= link_to '#' do %>
         <%= image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png", class: "item-img" %>
