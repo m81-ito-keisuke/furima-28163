@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   end
 
   def new
-    #@item = Item.new
+    @item = Item.new
   end
 
   def create
@@ -13,6 +13,9 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       render :new
+    end
+
+    def show
     end
   end
 
