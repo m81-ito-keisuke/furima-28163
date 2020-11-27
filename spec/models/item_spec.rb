@@ -48,7 +48,7 @@ describe Item do
         expect(@item.errors.full_messages).to include('Prefecture must be other than 1')
       end
       it '発送までの日数についての情報がなければ出品できない' do
-        @item.ship_days_id = 1
+        @item.ship_day_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include('Ship days must be other than 1')
       end

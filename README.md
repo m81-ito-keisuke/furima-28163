@@ -32,7 +32,7 @@ has_one :customer
 |status_id|integer|null: false|
 |delivery_change_id|integer|null: false|
 |prefecture_id|integer|null: false|
-|ship_days_id|integer|null: false|
+|ship_day_id|integer|null: false|
 |price|integer|null: false|
 
 ## customers table

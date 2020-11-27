@@ -14,7 +14,7 @@ class Item < ApplicationRecord
     validates :status_id
     validates :prefecture_id
     validates :delivery_change_id
-    validates :ship_days_id
+    validates :ship_day_id
   end
 
   with_options presence: true do
