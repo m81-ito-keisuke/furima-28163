@@ -6,7 +6,6 @@ class CustomerAddress
   with_options presence: true, numericality: { only_integer: true } do
     validates :item_id
     validates :user_id
-    validates :customer_id
   end
 
   with_options presence: true do
@@ -18,7 +17,7 @@ class CustomerAddress
   end
 
   def save
-    Customer.create(item_id: item_id, user_id: user_id)
-    Address.create(postal_code: postal_code, prefecture_id: prefecture_id, city: city, house_number: house_number, building_name: building_name, phone_number: phone_number, customer_id: customer_id )
+    @customer = Customer.create(item_id: item_id, user_id: user_id )
+    Address.create(postal_code: postal_code, prefecture_id: prefecture_id, city: city, house_number: house_number, building_name: building_name, phone_number: phone_number, customer_id: @customer.id )
   end
 end

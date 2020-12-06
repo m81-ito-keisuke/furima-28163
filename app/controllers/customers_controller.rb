@@ -1,16 +1,22 @@
 class CustomersController < ApplicationController
   before_action :set_item, only: [:index, :create]
+  before_action :authenticate_user!, only: [:index]
 
   def index
     @customer_address = CustomerAddress.new
+    unless user_signed_in? && current_user.id != @item.user.id 
+      redirect_to root_path
+    end
   end
 
   def create
     @customer_address = CustomerAddress.new(customer_params)
     if @customer_address.valid?
     @customer_address.save
-    end
+    redirect_to root_path
+    else
     render :index
+    end
   end
 
   private
