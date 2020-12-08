@@ -9,6 +9,11 @@ RSpec.describe CustomerAddress, type: :model do
     it 'すべての値が正しく入力されていれば保存できること' do
       expect(@customer_address).to be_valid
     end
+    it 'tokenが空では登録できないこと' do
+      @customer_address.token = ""
+      @customer_address.valid?
+      expect(@customer_address.errors.full_messages).to include("Token can't be blank")
+    end
     it 'postal_codeが空だと保存できないこと' do
       @customer_address.postal_code = ""
       @customer_address.valid?

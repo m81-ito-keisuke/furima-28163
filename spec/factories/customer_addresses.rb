@@ -9,5 +9,6 @@ FactoryBot.define do
     building_name { 'グランドオン天源' }
     phone_number { "08000000000" }
     customer_id { 14 }
+    token { "tok_abcdefghijk00000000000000000" }
   end
 end
