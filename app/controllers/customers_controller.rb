@@ -8,6 +8,10 @@ class CustomersController < ApplicationController
       redirect_to root_path
     end
 
+    if @item.customer.present?
+      redirect_to root_path
+    end
+
   end
 
   def create
