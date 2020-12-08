@@ -25,7 +25,7 @@ RSpec.describe CustomerAddress, type: :model do
       expect(@customer_address.errors.full_messages).to include("Postal code is invalid")
     end
     it 'prefecture_idを選択していないと保存できないこと' do
-      @customer_address.prefecture_id = "1"
+      @customer_address.prefecture_id = 1
       @customer_address.valid?
       expect(@customer_address.errors.full_messages).to include("Prefecture must be other than 1")
     end

@@ -4,14 +4,9 @@ class CustomersController < ApplicationController
 
   def index
     @customer_address = CustomerAddress.new
-    unless user_signed_in? && current_user.id != @item.user.id 
+    if user_signed_in? && current_user.id == @item.user.id || @item.customer.present?
       redirect_to root_path
     end
-
-    if @item.customer.present?
-      redirect_to root_path
-    end
-
   end
 
   def create
